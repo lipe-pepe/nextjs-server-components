@@ -16,12 +16,14 @@
 @theme {
   --color-blue: #63b3ed;
   --color-red: #fc8181;
+  --color-pink: #f687b3;
+  --color-green: #68d391;
+  --color-purple: #b794f4;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -43,8 +45,8 @@ h3 {
 
 p {
   font-family: var(--font-geist-sans);
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
 }
 
 section {

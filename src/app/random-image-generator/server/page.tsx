@@ -1,13 +1,17 @@
+import ServerComponentWrapper from "@/components/serverComponentWrapper";
 import getRandomImage from "@/services/getRandomImage";
 
 export default async function ServerComponentExample() {
   const imageData = await getRandomImage();
   return (
-    <div>
-      <div
-        className="w-96 h-96 bg-cover bg-no-repeat bg-center rounded-lg"
-        style={{ backgroundImage: `url(${imageData})` }}
-      />
+    <ServerComponentWrapper>
+      <div className="flex justify-center my-4">
+        <div
+          className="w-48 h-48 bg-cover bg-no-repeat bg-center rounded-lg"
+          style={{ backgroundImage: `url(${imageData})` }}
+        />
+      </div>
+
       <p>
         Percebeu como a página demorou um pouco para carregar, mas assim que
         carregada, tudo foi exibido de uma vez só? Se não percebeu, recarregue a
@@ -21,6 +25,6 @@ export default async function ServerComponentExample() {
         nova imagem?
       </p>
       <p>Volte e veja o exemplo com Client Component.</p>
-    </div>
+    </ServerComponentWrapper>
   );
 }

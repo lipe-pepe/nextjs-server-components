@@ -1,7 +1,8 @@
+import Button from "@/components/button";
 import Divider from "@/components/divider";
 import Expandable from "@/components/expandable";
-import Image from "next/image";
 import Link from "next/link";
+import { FaComputer, FaServer } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -42,43 +43,38 @@ export default function Home() {
             </p>
             <p>
               E para saber isso, é preciso se familiarizar com o conceito de
-              Server Side Rendering (SSR) e Client Side Rendering (CSR). Essas
-              são duas técnicas de renderização do websites. Ao renderizar uma
-              aplicação web, o código JavaScript, com que foi escrito, é
-              convertido para HTML e CSS, que o navegador usa para exibir a
-              interface de usuário.
+              <span className="text-pink"> Server Side Rendering</span> (SSR) e
+              <span className="text-pink"> Client Side Rendering </span>(CSR).
+              Essas são duas técnicas de renderização do websites. Ao renderizar
+              uma aplicação web, o código JavaScript, com que a aplicação foi
+              escrita, é convertido para HTML e CSS, que o navegador usa para
+              exibir a interface de usuário.
             </p>
             <p>
               Essa conversão pode ocorrer do lado do servidor ou do lado do
               cliente, o que caracteriza as duas técnicas de renderização.
             </p>
             <Expandable title="Você se lembra quem é o servidor e quem é o cliente?">
-              <div className="flex flex-row justify-center gap-6">
-                <div className="flex flex-col justify-center items-center">
-                  <Image
-                    alt="Server picture"
-                    src="/images/server.png"
-                    width={128}
-                    height={128}
-                  />
-                  <h3>Servidor</h3>
-                  <p>
-                    O computador em um data center que guarda o código da
-                    aplicação do site.
-                  </p>
+              <div className="border-[#A0AEC0] border-1 rounded-lg p-6 flex flex-col justify-center gap-6">
+                <div className="flex flex-row items-center gap-6">
+                  <FaServer size={48} />
+                  <div>
+                    <h3>Servidor</h3>
+                    <p>
+                      O computador, em um data center, que guarda o código da
+                      aplicação do site.
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center items-center">
-                  <Image
-                    alt="Browser picture"
-                    src="/images/browser.png"
-                    width={128}
-                    height={128}
-                  />
-                  <h3>Cliente</h3>
-                  <p>
-                    O navegador que está acessando um site e exibindo-o para o
-                    usuário.
-                  </p>
+                <div className="flex flex-row items-center gap-6">
+                  <FaComputer size={48} />
+                  <div>
+                    <h3>Cliente</h3>
+                    <p>
+                      O navegador que está acessando um site e exibindo-o para o
+                      usuário.
+                    </p>
+                  </div>
                 </div>
               </div>
             </Expandable>
@@ -122,9 +118,10 @@ export default function Home() {
             <p>
               Fazemos isso separando os componentes interagíveis do nosso Server
               Component em Client Components. Os Client Components serão
-              pré-renderizados no servidor, então uma preview não-interative
+              pré-renderizados no servidor, então uma preview não-interativa
               desses componentes é exibida para o usuário. Após isso, eles
-              passam por um processo chamado de hidratação, que é quando o HTML
+              passam por um processo chamado de{" "}
+              <span className="text-pink">hidratação</span>, que é quando o HTML
               estático recebe o JavaScript necessário para a interação
               funcionar.
             </p>
@@ -133,8 +130,9 @@ export default function Home() {
               A partir do Next.js 13, usando o App Router, os Server Components
               são o componente padrão. Ou seja, todo componente criado vai ser
               renderizado do lado do servidor. Para usar features de interação,
-              é necessário colocar uma diretiva &quot;use client&quot; no início
-              do arquivo do componente.
+              é necessário colocar uma diretiva{" "}
+              <span className="text-pink">&quot;use client&quot;</span> no
+              início do arquivo do componente.
             </p>
             <p>
               Colocando essa diretiva, você define o limite entre o que deve ser
@@ -148,14 +146,14 @@ export default function Home() {
               Ah, e se você tentar usar alguma interatividade num Server
               Component, o Next.js vai te mostrar um erro tipo esse aqui:
             </p>
-            <div className="p-4 text-red border-red rounded-lg border-2">
+            <div className="my-4 mx-8 p-4 text-red border-red rounded-lg border-1">
               You&apos;re importing a component that needs `useEffect`. This
               React hook only works in a client component. To fix, mark the file
               (or its parent) with the `&quot;use client&quot;` directive.
             </div>
             <p>
               Bem auto-explicativo, né? Só colocar &quot;use client&quot; no
-              topo do arquivo, e voi lá.
+              topo do arquivo, e voilà.
             </p>
             <p>
               É importante pensar em sempre ter o mínimo de JavaScript sendo
@@ -175,22 +173,28 @@ export default function Home() {
               Component, outra foi feita 100% com Client Components e a última
               foi feita utilizando ambos.
             </p>
+            <p>
+              Nesses exemplos, os Server Components estão marcados de{" "}
+              <span className="text-green"> verde </span>, enquanto os Client
+              Components estão marcados de{" "}
+              <span className="text-purple"> roxo</span>.
+            </p>
 
-            <div className="flex flex-row gap-8">
+            <div className="flex flex-row gap-8 my-8">
               <Link href={"/random-image-generator/server"}>
-                <div className="p-4 bg-blue font-bold">Server Component</div>
+                <Button>Server Component</Button>
               </Link>
 
               <Link href={"/random-image-generator/client"}>
-                <div className="p-4 bg-blue font-bold">Client Component</div>
+                <Button>Client Component</Button>
               </Link>
 
               <Link href={"/random-image-generator/mixed"}>
-                <div className="p-4 bg-blue font-bold">Ambos</div>
+                <Button>Ambos</Button>
               </Link>
             </div>
 
-            <Expandable title="Atenção!">
+            <Expandable title="⚠️ Atenção!">
               <p>
                 No Server Component podemos fazer tudo que um backend faria
                 direto no corpo do componente, como chamadas a APIs e queries
