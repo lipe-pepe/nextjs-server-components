@@ -7,6 +7,7 @@ export default async function MixedExample() {
 
   return (
     <ServerComponentWrapper>
+      <ImageGenerator initialImage={imageData} />
       <p>
         Nesse exemplo, a imagem é buscada no servidor, pelo Server Component.
         Isso faz com que, quando a página é carregada, a imagem já esteja
@@ -18,8 +19,6 @@ export default async function MixedExample() {
         dentro desse Server Component. Então, o usuário ainda pode atualizar a
         imagem.
       </p>
-
-      <ImageGenerator initialImage={imageData} />
     </ServerComponentWrapper>
   );
 }
