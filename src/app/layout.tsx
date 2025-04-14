@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         <div className="flex flex-col min-h-screen">
           {/* Main content */}
-          <main className="flex-grow mx-6 sm:mx-16 md:mx-32 lg:mx-64 xl:mx-96 mt-16">
+          <main className="flex-grow bg-mint mx-6 sm:mx-16 md:mx-32 lg:mx-64 xl:mx-96 mt-16">
             {children}
           </main>
 

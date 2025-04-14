@@ -30,7 +30,7 @@ export default function ClientComponentExample() {
         />
       )}
       <button
-        className="mt-4 p-4 cursor-pointer bg-blue-500 rounded-lg text-white font-bold"
+        className="mt-4 p-4 cursor-pointer bg-blue rounded-lg text-white font-bold"
         onClick={handleNewImage}
       >
         Gerar nova imagem

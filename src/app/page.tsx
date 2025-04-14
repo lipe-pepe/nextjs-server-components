@@ -14,19 +14,19 @@ export default function Home() {
       <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
         {/* Index sidebar */}
         <nav className="hidden lg:block w-1/4 sticky top-16 self-start">
-          <ul className="space-y-2">
+          <ul className="space-y-8">
             <li>
-              <a href="#history" className="hover:text-blue-500">
+              <a href="#history" className="hover:text-blue">
                 Breve história
               </a>
             </li>
             <li>
-              <a href="server-components" className="hover:text-blue-500">
+              <a href="#server-components" className="hover:text-blue">
                 Server Components
               </a>
             </li>
             <li>
-              <a href="#pratical" className="hover:text-blue-500">
+              <a href="#pratical" className="hover:text-blue">
                 Na prática
               </a>
             </li>
@@ -148,12 +148,11 @@ export default function Home() {
               Ah, e se você tentar usar alguma interatividade num Server
               Component, o Next.js vai te mostrar um erro tipo esse aqui:
             </p>
-            <div className="p-4 text-red-700 border-red-700 rounded-lg border-2">
+            <div className="p-4 text-red border-red rounded-lg border-2">
               You&apos;re importing a component that needs `useEffect`. This
               React hook only works in a client component. To fix, mark the file
               (or its parent) with the `&quot;use client&quot;` directive.
             </div>
-            {/* BOTAR IMAGEM */}
             <p>
               Bem auto-explicativo, né? Só colocar &quot;use client&quot; no
               topo do arquivo, e voi lá.
@@ -167,38 +166,41 @@ export default function Home() {
             {/* MUITO MAIS CONTEÚDO, PEGAR REFERENCIAS DA PARTE RENDERING DO SITE DO NEXT */}
           </section>
           <Divider />
-          <h2>Na prática</h2>
-          <p>
-            Veja agora um exemplo de uso de Server Components. Abaixo, há botões
-            para páginas iguais. Todas mostram uma imagem aleatória buscada de
-            uma API. No entanto, uma foi feita com Server Component, outra foi
-            feita 100% com Client Components e a última foi feita utilizando
-            ambos.
-          </p>
-
-          <div className="flex flex-row gap-8">
-            <Link href={"/random-image-generator/server"}>
-              <div className="p-4 bg-blue-500 font-bold">Server Component</div>
-            </Link>
-
-            <Link href={"/random-image-generator/client"}>
-              <div className="p-4 bg-blue-500 font-bold">Client Component</div>
-            </Link>
-
-            <Link href={"/random-image-generator/mixed"}>
-              <div className="p-4 bg-blue-500 font-bold">Ambos</div>
-            </Link>
-          </div>
-
-          <Expandable title="Atenção!">
+          <section id="pratical">
+            <h2>Na prática</h2>
             <p>
-              No Server Component podemos fazer tudo que um backend faria direto
-              no corpo do componente, como chamadas a APIs e queries para bancos
-              de dados. Mas isso deve ser feito com cuidado, pois pode
-              prejudicar a escalabilidade e não segue o princípio da Separação
-              de Responsabilidades, importante no desenvolvimento de software.
+              Veja agora um exemplo de uso de Server Components. Abaixo, há
+              botões para páginas iguais. Todas mostram uma imagem aleatória
+              buscada de uma API. No entanto, uma foi feita com Server
+              Component, outra foi feita 100% com Client Components e a última
+              foi feita utilizando ambos.
             </p>
-          </Expandable>
+
+            <div className="flex flex-row gap-8">
+              <Link href={"/random-image-generator/server"}>
+                <div className="p-4 bg-blue font-bold">Server Component</div>
+              </Link>
+
+              <Link href={"/random-image-generator/client"}>
+                <div className="p-4 bg-blue font-bold">Client Component</div>
+              </Link>
+
+              <Link href={"/random-image-generator/mixed"}>
+                <div className="p-4 bg-blue font-bold">Ambos</div>
+              </Link>
+            </div>
+
+            <Expandable title="Atenção!">
+              <p>
+                No Server Component podemos fazer tudo que um backend faria
+                direto no corpo do componente, como chamadas a APIs e queries
+                para bancos de dados. Mas isso deve ser feito com cuidado, pois
+                pode prejudicar a escalabilidade e não segue o princípio da
+                Separação de Responsabilidades, importante no desenvolvimento de
+                software.
+              </p>
+            </Expandable>
+          </section>
         </main>
       </div>
     </div>

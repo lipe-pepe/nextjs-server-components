@@ -21,7 +21,7 @@ const Expandable: React.FC<ExpandableProps> = ({
   return (
     <div className="border rounded-md shadow-sm overflow-hidden my-4">
       <button
-        className="w-full text-left px-4 py-3 font-semibold transition hover:text-blue-500 cursor-pointer"
+        className="w-full text-left px-4 py-3 font-semibold transition hover:text-blue cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex flex-row gap-2 items-center">
