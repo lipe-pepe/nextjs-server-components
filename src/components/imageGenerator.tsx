@@ -22,17 +22,19 @@ const ImageGenerator: React.FC<ImageGeneratorProps> = ({ initialImage }) => {
 
   return (
     <ClientComponentWrapper>
-      <div
-        className="w-96 h-96 bg-cover bg-no-repeat bg-center rounded-lg"
-        style={{ backgroundImage: `url(${imageData})` }}
-      />
+      <div className="flex flex-col items-center my-4">
+        <div
+          className="w-48 h-48 bg-cover bg-no-repeat bg-center rounded-lg"
+          style={{ backgroundImage: `url(${imageData})` }}
+        />
 
-      <button
-        className="mt-4 p-4 cursor-pointer bg-blue rounded-lg text-white font-bold"
-        onClick={handleNewImage}
-      >
-        {loading ? "Carregando..." : "Gerar nova imagem"}
-      </button>
+        <button
+          className="mt-4 p-4 cursor-pointer bg-blue rounded-lg text-white font-bold"
+          onClick={handleNewImage}
+        >
+          {loading ? "Carregando..." : "Gerar nova imagem"}
+        </button>
+      </div>
     </ClientComponentWrapper>
   );
 };
