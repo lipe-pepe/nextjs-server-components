@@ -7,7 +7,7 @@ import { FaComputer, FaServer } from "react-icons/fa6";
 export default function Home() {
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
-      <div className="py-8 flex flex-col items-center justify-center">
+      <div className="py-8 flex flex-col items-start md:items-center justify-center">
         <h1>Server Components</h1>
         <p>Entendendo a feature do React</p>
       </div>
@@ -56,7 +56,7 @@ export default function Home() {
             </p>
             <Expandable title="Você se lembra quem é o servidor e quem é o cliente?">
               <div className="border-[#A0AEC0] border-1 rounded-lg p-6 flex flex-col justify-center gap-6">
-                <div className="flex flex-row items-center gap-6">
+                <div className="flex flex-row items-start gap-6">
                   <FaServer size={48} />
                   <div>
                     <h3>Servidor</h3>
@@ -66,7 +66,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-row items-center gap-6">
+                <div className="flex flex-row items-start gap-6">
                   <FaComputer size={48} />
                   <div>
                     <h3>Cliente</h3>
@@ -86,7 +86,6 @@ export default function Home() {
               converte em HTML e CSS e exibe a interface da página para o
               usuário.
             </p>
-            {/* BOTAR IMAGEM EXEMPLIFICANDO */}
             <p>
               Por muito tempo, o React só fazia Client Side Rendering. Quando o
               Next.js surgiu, em 2016, ele trouxe o Server Side Rendering. Essa
@@ -161,7 +160,6 @@ export default function Home() {
               Client Component e o que não precisa, quando for criar sua árvore
               de componentes.
             </p>
-            {/* MUITO MAIS CONTEÚDO, PEGAR REFERENCIAS DA PARTE RENDERING DO SITE DO NEXT */}
           </section>
           <Divider />
           <section id="pratical">
@@ -180,7 +178,7 @@ export default function Home() {
               <span className="text-purple"> roxo</span>.
             </p>
 
-            <div className="flex flex-row gap-8 my-8">
+            <div className="flex flex-col md:flex-row gap-8 my-8">
               <Link href={"/random-image-generator/server"}>
                 <Button>Server Component</Button>
               </Link>
@@ -210,7 +208,3 @@ export default function Home() {
     </div>
   );
 }
-
-// Colocar tecnologias clicáveis ou destacadas.
-// Colocar meu nome
-// DAR CRÉDITO AO FREEPIK <a href="https://www.flaticon.com/br/icones-gratis/servidor" title="servidor ícones">Servidor ícones criados por Freepik - Flaticon</a>
